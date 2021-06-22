@@ -1,0 +1,725 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.png">
+  <link rel="icon" href="/img/favicon.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="John Doe">
+  <meta name="keywords" content="">
+  
+  <title>网络工程复习 - Hexo</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.7.2/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"example.com","root":"/","version":"1.8.11","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}},"search_path":"/local-search.xml"};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>天机博客</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner" id="banner" parallax=true
+         style="background: url('/img/default.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="网络工程复习">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-06-22 09:09" pubdate>
+        2021年6月22日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4.9k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      52
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">网络工程复习</h1>
+            
+            <div class="markdown-body">
+              <h3 id="第一章-交换网络"><a href="#第一章-交换网络" class="headerlink" title="第一章 交换网络"></a>第一章 交换网络</h3><p>我国的互联网主要是依靠风险投资，自身并不能创造价值，出现冬天是必然的，那么，互联网的赢利之道在哪里？**网络工程复习</p>
+<p>答：       </p>
+<p>“新冠”会帮谁的忙？即：从技术的角度来看，新冠给我们带来了什么</p>
+<p>答：</p>
+<h4 id="交换机的工作原理"><a href="#交换机的工作原理" class="headerlink" title="交换机的工作原理"></a>交换机的工作原理</h4><p>当交换机收到数据时，它会检查它的目的MAC地址，然后把数据从目的主机所在的接口转发出去。交换机之所以能实现这一功能，是因为交换机内部有一个MAC地址表，MAC地址表记录了网络中所有MAC地址与该交换机各端口的对应信息。某一数据帧需要转发时，交换机根据该数据帧的目的MAC地址来查找MAC地址表，从而得到该地址对应的端口，即知道具有该MAC地址的设备是连接在交换机的哪个端口上，然后交换机把数据帧从该端口转发出去。</p>
+<p>1.交换机根据收到数据帧中的源MAC地址建立该地址同交换机端口的映射，并将其写入MAC地址表中。<br>2.交换机将数据帧中的目的MAC地址同已建立的MAC地址表进行比较，以决定由哪个端口进行转发。<br>3.如数据帧中的目的MAC地址不在MAC地址表中，则向所有端口转发。这一过程称为泛洪（flood）。<br>4.广播帧和组播帧向所有的端口转发。</p>
+<h4 id="共享式以太网和交换式以太网"><a href="#共享式以太网和交换式以太网" class="headerlink" title="共享式以太网和交换式以太网"></a>共享式以太网和交换式以太网</h4><p>总线型和星型</p>
+<p>交换机，隔离冲突域</p>
+<h4 id="广播域和冲突域"><a href="#广播域和冲突域" class="headerlink" title="广播域和冲突域"></a>广播域和冲突域</h4><p>广播帧可达区域，一个局域网往往是一个广播域</p>
+<p>不同时收发数据</p>
+<h4 id="以太网的最小帧长"><a href="#以太网的最小帧长" class="headerlink" title="以太网的最小帧长"></a>以太网的最小帧长</h4><p>64</p>
+<p>1518</p>
+<p> 802.3标准将长度达到最大值的以太网两倍往返时延取为51.2μs = (2500*4)/((1.9~2.4)*10**8)s. </p>
+<p>千兆交换机转发速率：1.488Mpps</p>
+<p>(1000M/8bit/(64+8+12))</p>
+<h4 id="交换机的交换方式"><a href="#交换机的交换方式" class="headerlink" title="交换机的交换方式"></a>交换机的交换方式</h4><p>1.直通式</p>
+<p>​     直接转发，不校验，收发端口速率不匹配时容易丢帧</p>
+<p>2.存储转发</p>
+<p>​     先校验再转发，有效协调收发端口速率不匹配问题，速度慢  </p>
+<p>​     即与源地址处于同一网桥端口，交换机不转发该数据帧，而是直接丢弃。  </p>
+<h4 id="交换机环路是MAC地址系统失效"><a href="#交换机环路是MAC地址系统失效" class="headerlink" title="交换机环路是MAC地址系统失效"></a>交换机环路是MAC地址系统失效</h4><p>l由于交换机不允许两个端口有相同的MAC地址，所以交换机会不断用源MAC地址，更新MAC地址表，MAC地址系统失效。</p>
+<h4 id="交换机的级联和堆叠"><a href="#交换机的级联和堆叠" class="headerlink" title="交换机的级联和堆叠"></a>交换机的级联和堆叠</h4><p>1、通过堆叠，可以扩展端口密度。</p>
+<p>2、方便用户的管理操作。用户可以将一组交换机作为一个逻辑对象，通过一个IP来管理，减少IP地址的占用并方便管理。</p>
+<p>3、扩展上链带宽。如8台交换机堆叠，上链可以有8个千兆端口，8个千兆口形成聚合端口，带宽可以达到8Gbps。</p>
+<p>缺点</p>
+<p>1、堆叠交换机的数目有限制，一般最多8台。</p>
+<p>2、要求堆叠成员离自己的位置足够近，一般在同一机柜中。</p>
+<p>注意：</p>
+<p>1、堆叠只能在同一厂商且具有堆叠。。</p>
+<p>2、数目限制</p>
+<p>3、级联有上下集关系，性能不同，不能增加交换速度</p>
+<p>4、逻辑上，级联单独，堆叠看成一个</p>
+<p>5、距离限制</p>
+<p>双绞线：568A:绿蓝橙棕，白色在前，三五交换</p>
+<h4 id="双绞线100米传输极限的原因"><a href="#双绞线100米传输极限的原因" class="headerlink" title="双绞线100米传输极限的原因"></a>双绞线100米传输极限的原因</h4><p>1、信号传输时，电阻和电容会导致信号衰减或畸变。</p>
+<p>2．信号在导线传输过程中既会产生彼此之间的相互干扰，也会受到外界电磁波的干扰，</p>
+<p>3．以太网所允许的最大延迟为512比特时间（1比特时间=10纳秒）。</p>
+<p>4．根据IEEE 802.3标准要求，集线设备和网卡端口的PHY芯片只保证驱动100米的铜缆，对更远的传输距离则不作保证。</p>
+<h3 id="第二章-虚拟局域网技术"><a href="#第二章-虚拟局域网技术" class="headerlink" title="第二章 虚拟局域网技术"></a>第二章 虚拟局域网技术</h3><p>VLAN编号：1~1005</p>
+<p>1，1002~1005特殊用处</p>
+<p>•例外：当交换机需要从Trunk接口发送的数据帧VLAN标签与这个Trunk接口的PVID相同，交换机会以不携带VLAN标签的方式来发送这个数据帧。</p>
+<p>VLAN总结：</p>
+<p>VLAN可以有效地隔离广播域</p>
+<p>VLAN更安全</p>
+<p>l现有网卡不需要更换，因为有终端连接的第一台交换机负责生成/去除VLAN新帧</p>
+<p>帧长由1518-&gt;1522(4字节tag)</p>
+<h3 id="第三章-生成树协议"><a href="#第三章-生成树协议" class="headerlink" title="第三章 生成树协议"></a>第三章 生成树协议</h3><p>消除环路</p>
+<p>链路备份</p>
+<p>阻塞状态：     当一个端口阻止流量进入或离开时，该端口便视为处于阻塞状态。不过 STP 用来防止环路的网桥协议数据单元 (BPDU) 帧仍可继续通行。  </p>
+<p>路径开销：</p>
+<p><img src="C:\Users\陌生的回忆\AppData\Roaming\Typora\typora-user-images\1620699797802.png" srcset="/img/loading.gif" lazyload alt="1620699797802"></p>
+<p>​     根端口存在于非根桥上，该端口具有到根桥的最佳路径。  </p>
+<p>分配端口：</p>
+<p>如果两个交换机端口到根桥的路径开销相同而且都是最低开销，交换机需要确定哪一个成为根端口。此时，交换机通过可自定义的端口优先级值来加以确定；如果两个端口的优先级值相同，则通过最低端口 ID 来确定。</p>
+<p><img src="C:\Users\陌生的回忆\AppData\Roaming\Typora\typora-user-images\1620701207905.png" srcset="/img/loading.gif" lazyload alt="1620701207905"></p>
+<p><img src="C:\Users\陌生的回忆\AppData\Roaming\Typora\typora-user-images\1620701300001.png" srcset="/img/loading.gif" lazyload alt="1620701300001"></p>
+<p>3.这种状态在图中出现了2次，即从侦听过渡到学习，以及从学习过渡到转发。转发延迟计时器默认为15秒，端口一旦进入到侦听状态（或学习状态），必须等待15秒才能过渡到学习状态（或转发状态）</p>
+<p>•侦听到学习：计算整个STP需要时间</p>
+<p>•学习到转发：学习MAC地址转发表需要时间</p>
+<p>l转发延迟超时事件：</p>
+<p>•以时间作为是否迁移到下一状态的评判标准，其他事件只要发生，端口会立即切换STP状态；</p>
+<p>•确保了当网络中STP端口状态发生变化时，不会产生临时环路。</p>
+<p>对点对点有效：P/A机制：是RSTP的最大特点</p>
+<p>指定端口与对端握手，并逐级传递</p>
+<table>
+<thead>
+<tr>
+<th><strong>RSTP****状态</strong></th>
+<th><strong>传统<strong><strong>STP</strong></strong>状态</strong></th>
+<th><strong>功能</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Discarding  （丢弃状态）</td>
+<td>Disabled  （禁用状态）</td>
+<td>这种状态表示此端口未启用。</td>
+</tr>
+<tr>
+<td></td>
+<td>Blocking  （阻塞状态）</td>
+<td>这种状态表示此端口会忽略入站数据帧，同时也不会转发数据帧。</td>
+</tr>
+<tr>
+<td></td>
+<td>侦听</td>
+<td>这种状态表示此端口既不会学习MAC地址，也不会转发数据帧。</td>
+</tr>
+<tr>
+<td>Learning  （学习状态）</td>
+<td>Learning  （学习状态）</td>
+<td>这种状态表示此端口会学习MAC地址，但不会转发数据帧。</td>
+</tr>
+<tr>
+<td>Forwarding  （转发状态）</td>
+<td>Forwarding  （转发状态）</td>
+<td>这种状态表示此端口既会学习MAC地址，也会转发数据帧。</td>
+</tr>
+</tbody></table>
+<h3 id="第四章-静态路由"><a href="#第四章-静态路由" class="headerlink" title="第四章 静态路由"></a>第四章 静态路由</h3><p> 直连路由的路由优先级和度量值都是不可修改的  ，均为0</p>
+<p>串口（Serial）直连两端都配置IP地址之后，路由表才会出现；</p>
+<p>稳定可控容易部署</p>
+<p>扩展性差</p>
+<p>无法反映拓扑的变化</p>
+<p>​     <strong>特别注意：两个相邻路由器不能互相设置默认路由，否则会出现环路</strong>  </p>
+<p><strong>网络汇总的优势：</strong></p>
+<p>•减小了路由条目的数量 ；</p>
+<p>•降低了路由设备资源的消耗；</p>
+<p>•提高了网络基础设施的转发效率；</p>
+<p>•突出了IP地址作为逻辑地址的可汇总优势。</p>
+<p><img src="https://raw.githubusercontent.com/motianji004/blogimage/main/img/1620726909201.png" srcset="/img/loading.gif" lazyload alt="1620726909201"></p>
+<p><img src="C:\Users\陌生的回忆\AppData\Roaming\Typora\typora-user-images\1620726918997.png" srcset="/img/loading.gif" lazyload alt="1620726918997"></p>
+<p><img src="https://raw.githubusercontent.com/motianji004/blogimage/main/img/1620726935720.png" srcset="/img/loading.gif" lazyload alt="1620726935720"></p>
+<p><img src="C:\Users\陌生的回忆\AppData\Roaming\Typora\typora-user-images\1620727016324.png" srcset="/img/loading.gif" lazyload alt="1620727016324"></p>
+<p><img src="C:\Users\陌生的回忆\AppData\Roaming\Typora\typora-user-images\1620727022888.png" srcset="/img/loading.gif" lazyload alt="1620727022888"></p>
+<p><img src="C:\Users\陌生的回忆\AppData\Roaming\Typora\typora-user-images\1620727030074.png" srcset="/img/loading.gif" lazyload alt="1620727030074"></p>
+<p>配置两条目的网络一样而下一跳不一样但优先级不同的静态路由可以实现主备用的作用，而设置优先级相同时则可以实现负载均衡。</p>
+<h3 id="第五章-VLAN间路由"><a href="#第五章-VLAN间路由" class="headerlink" title="第五章 VLAN间路由"></a>第五章 VLAN间路由</h3><p>•通过拥有三层功能的设备所提供的路由机制来为不同VLAN中的设备路由数据包的设计方案称为VLAN间路由。</p>
+<h4 id="单臂路由："><a href="#单臂路由：" class="headerlink" title="单臂路由："></a>单臂路由：</h4><p>•交换机与路由器只用一个接口互联；</p>
+<p>•交换机上的所有VLAN间数据都从这个接口进行转发；</p>
+<p>•这组组网环境称为单臂路由。</p>
+<p><img src="C:\Users\陌生的回忆\AppData\Roaming\Typora\typora-user-images\1620784246102.png" srcset="/img/loading.gif" lazyload alt="1620784246102"></p>
+<p>物理上一个接口，逻辑上划分为多个子接口</p>
+<p><img src="C:\Users\陌生的回忆\AppData\Roaming\Typora\typora-user-images\1620784324550.png" srcset="/img/loading.gif" lazyload alt="1620784324550"></p>
+<p>interface g0/0/0.10</p>
+<p>dot1q termination vid 10</p>
+<p>ip adress 10.0.10.254 24</p>
+<p>arp boradcast enable</p>
+<p>l通过命令<strong>interface</strong> <em>interface-type interface-<strong>number.sub</strong>-interface number</em>创建了子接口并进入子接口配置视图。华为路由器上子接口编号的配置范围是1～4096。我们将子接口编号与VLAN ID保持了统一，这是为了增强配置的可读性。</p>
+<p>l在两个子接口的子接口配置视图下分别使用命令<strong>dot1q termination</strong> <em>vid</em>为它们配置了802.1Q封装并且指定了端口的PVID。鉴于对端的交换机端口会执行802.1Q封装，因此这条命令的目的正是为了确保路由器子接口能够与对端的交换机端口封装模式一致。当接口配置了这条命令后，接口在收发数据帧时的处理原则是：接收数据帧时，路由器会剥除数据帧中携带的VLAN标签，之后进行三层转发；在向外转发数据帧时，是否带VLAN标签由出站接口决定。当这个接口发送数据帧时，路由器会将相应的VLAN标签添加到数据帧中再进行发送。</p>
+<p>l命令<strong>arp</strong> <strong>broadcast enable</strong>能够启用子接口的ARP广播功能。在默认情况下，ARP广播功能是禁用的，也就是说子接口在接收到ARP广播帧后会直接丢弃。为了使子接口能够处理广播数据帧，管理员就需要在子接口上配置这条命令。</p>
+<p>vlan batch 10 20</p>
+<p>port trunk allow-pass vlan 10 20</p>
+<h4 id="三层交换机："><a href="#三层交换机：" class="headerlink" title="三层交换机："></a>三层交换机：</h4><p>•集成了三层数据包转发功能的交换机被称为三层交换机；</p>
+<p>•可以实现将终端隔离在不同VLAN中，同时为这些终端提供VLAN间路的功能；</p>
+<p>•随着通过ASIC（和网络处理器）开始大量应用于路由器，路由器和交换机之间的界限已经变得十分模糊。</p>
+<p>vlan batch 10 20</p>
+<p>interface vlanif 10</p>
+<p>其余和传统类似</p>
+<h5 id="虚拟VLAN接口："><a href="#虚拟VLAN接口：" class="headerlink" title="虚拟VLAN接口："></a>虚拟VLAN接口：</h5><p>•简称SVI接口；</p>
+<p>•它们所在的网段作为直连路由填充在路由表中；</p>
+<p>•虚拟VLAN接口就十分适合充当该VLAN所连接设备的网关。</p>
+<h4 id="网络排错的几大步骤："><a href="#网络排错的几大步骤：" class="headerlink" title="网络排错的几大步骤："></a>网络排错的几大步骤：</h4><p>•收集故障信息；</p>
+<p>•定位故障点；</p>
+<p>•提出解决方案并进行测试；</p>
+<p>•实施变更并进行测试。</p>
+<h3 id="第六章-动态路由"><a href="#第六章-动态路由" class="headerlink" title="第六章 动态路由"></a>第六章 动态路由</h3><p>距离矢量型路由协议</p>
+<p>链路状态型路由协议</p>
+<p>l两类路由协议的比较：</p>
+<p>•运行距离矢量型路由协议的路由器只拥有自己周围这几台路由器分享的距离和矢量信息；</p>
+<p>运行链路状态型路由协议的路由器则像是在每个路口为远足者提供一张完整的区域地图</p>
+<p>从路由协议在发送路由更新信息时是否会携带掩码，将路由协议分为：</p>
+<p>•有类路由协议；</p>
+<p>•无类路由协议。</p>
+<p><img src="C:\Users\陌生的回忆\AppData\Roaming\Typora\typora-user-images\1620786802745.png" srcset="/img/loading.gif" lazyload alt="1620786802745"></p>
+<p><img src="C:\Users\陌生的回忆\AppData\Roaming\Typora\typora-user-images\1620786837422.png" srcset="/img/loading.gif" lazyload alt="1620786837422"></p>
+<p><img src="C:\Users\陌生的回忆\AppData\Roaming\Typora\typora-user-images\1620787052688.png" srcset="/img/loading.gif" lazyload alt="1620787052688"></p>
+<p>AR1通过有类路由协议RIPv1发送的路由更新，学习到了一条关于网络22.0.0.0/8的路由信息。之所以AR1添加到自己IPv4路由表中的条目不是22.1.1.0/24，是因为AR2在通告路由时，需要首先判断发送路由更新的接口IP地址和该更新消息中的网络地址是否在同一个主类网络中。经过判断，AR2发现自己用来发送这条路由的E0接口IP地址12.1.1.2属于12.0.0.0/8这个A类网络，而22.1.1.0/24这条路由则属于22.0.0.0/8这个A类网络，它们并不处于同一个主类网络中，于是AR2将这条路由汇总为了主类网络22.0.0.0/8发送给了AR1。</p>
+<p>然而，AR2收到AR1发送的RIPv1路由更新消息，却可以学习到关于子网12.1.2.0/24的信息。这是因为，AR1在通告路由时，发现发送路由更新的接口IP地址（12.1.1.1）和该路由的网络地址（12.1.2.0）都处于主类网络12.0.0.0/8中；同时，这条路由的子网掩码和AR1 E0接口的掩码都是24位。于是，AR1直接发送了去往子网12.1.2.0的路由更新，而不会将它汇总为主类网络。在AR2接收到更新消息时，AR2发现自己接收这条路由更新的E0接口IP地址（12.1.1.2）与该路由的网络地址（12.1.2.0/24）都处于12.0.0.0这个A类网络中；同时，路由器用自己E0接口的24位掩码匹配12.1.2.0这个网络地址，发现主机位全部为0，于是AR2就将E0接口的24位掩码赋予了12.1.2.0这条路由，将12.1.2.0/24作为路由条目保存进了自己的IPv4路由表中。</p>
+<p>如果AR2的E1接口连接了另一台路由器AR3，我们就可以在AR2向AR3发送路由更新时，更加清晰地看到跨越主类网络边界的含义。此时，AR2通告给AR3的有关12.1.2.0/24与12.1.1.0/24这两条路由前缀都会被汇总为同一主类网络。于是，AR3的路由表中也就只有12.0.0.0/8这一条主类网络路由。</p>
+<h4 id="距离矢量型路由协议"><a href="#距离矢量型路由协议" class="headerlink" title="距离矢量型路由协议"></a>距离矢量型路由协议</h4><p>•易配置；</p>
+<p>•具备动态路由协议的扩展性和应变能力；</p>
+<p>•能够自动学习路由、选择路由；</p>
+<p>•避免网络中出现环路；</p>
+<p>路由通告方式是周期更新</p>
+<p>l交换信息</p>
+<p>•节点所知的全网可达信息－－交换路由表（路由转发表）</p>
+<p>•路由信息：目的＋距离（节点个数）</p>
+<p> －－即通过“我”能到达哪些节点，有多远</p>
+<p>l交换方式</p>
+<p>•仅与相邻节点交换，定期交换</p>
+<p>•与相邻路由器交换全网路由信息</p>
+<p>l最佳路由计算方式</p>
+<p>•每个节点告诉“我”的，都是他们的最佳路由。</p>
+<p>•根据当前已知的，对比新知道的，算出最好的</p>
+<p>•当前知道：到D经过C，总距离为5</p>
+<p>•新了解到：B告诉“我”，经过他到D距离为2</p>
+<p>•“我”到B的距离为2， 所以“我”到D的路由更新为：经过B到D，路由距离为4</p>
+<p><img src="C:\Users\陌生的回忆\AppData\Roaming\Typora\typora-user-images\1620787862169.png" srcset="/img/loading.gif" lazyload alt="1620787862169"></p>
+<p>l网络中出现了接口状态变化，环路隐患</p>
+<h4 id="RIPv1-amp-RIPv2"><a href="#RIPv1-amp-RIPv2" class="headerlink" title="RIPv1&amp;RIPv2"></a>RIPv1&amp;RIPv2</h4><p>l与RIPv2相比，RIPv1的缺陷有：</p>
+<p>•典型的有类路由协议；</p>
+<p>•采用广播进行周期更新；</p>
+<p>•无法认证身份。</p>
+<p>l广播更新：只要一个广播域中有启用了RIPv1的接口，那么这个广播域中没有启用RIPv1的设备也必须频繁地处理RIPv1路由器发送的广播更新消息，尽管这些更新与它们实际上毫无干系。这种做法无疑增加了无关设备的开销。</p>
+<p>lRIP协议的特性：</p>
+<p>•RIP协议（无论RIPv1还是RIPv2）是基于UDP的应用层协议，RIP对应的端口号是UDP 520；</p>
+<p>•RIPv1封装的RIP消息，其目的地址也就是255.255.255.255；</p>
+<p>•RIPv2在发送RIP消息时，<em><strong>封装的目的IP地址为组播地址224.0.0.9。</strong></em></p>
+<h4 id="RIP的环路避免机制"><a href="#RIP的环路避免机制" class="headerlink" title="RIP的环路避免机制"></a>RIP的环路避免机制</h4><p>•水平分割（Split Horizon）引入的规则是，禁止路由器将从一个接口学习到的路由，再从同一个接口通告出去。</p>
+<p>​    毒性反转的做法是，当路由器从一个接口学习到一条去往某个网络路由时，它就会通过这个接口通告一条该网络不可达的路由  </p>
+<p>•路由毒化（Route Poisoning）是指路由器会将自己路由表中已经失效的路由作为一条不可达路由主动通告出去；</p>
+<p>•触发更新（Triggered Update）顾名思义，是指路由器在网络发生变化时，不等待更新计时器到时，就主动发送更新。</p>
+<p>路由毒化和触发更新这两种机制结合在一起，可以迅速将网络出现了变化的消息通告给网络中的其他路由器，避免网络在等待计时器过期的过程中出现环路。</p>
+<p>OSPF（开放最短路径优先）</p>
+<p>三个要点：</p>
+<ul>
+<li>向本自治系统中所有路由器发送信息，这里使用的方法是洪泛法。</li>
+<li>发送的信息就是与本路由器相邻的所有路由器的链路状态，但这只是路由器所知道的部分信息。</li>
+<li>“链路状态”就是说明本路由器都和哪些路由器相邻，以及该链路的“度量”(metric)。 </li>
+<li>只有当链路状态发生变化时，路由器才用洪泛法向所有路由器发送此信息</li>
+</ul>
+<p>​     。OSPF 的更新过程收敛得快是其重要优点。   </p>
+<p>OSPF 不用 UDP 而是直接用 IP 数据报传送。</p>
+<p>​     设备的接口如果未启用为接收 OSPF 数据包，则会忽略这些数据包。这样可节省非 OSPF 设备的 CPU 处理时间。  </p>
+<p><img src="C:\Users\陌生的回忆\AppData\Roaming\Typora\typora-user-images\1620803341183.png" srcset="/img/loading.gif" lazyload alt="1620803341183"></p>
+<p>问题1：</p>
+<p>距离矢量路由协议是通过路由器向其邻居发送自己的路由表的方式来维护自己本身的路由信息；而链路状态协议从网络或者网络的限定区域内的所有其他路由器处（不仅仅限制在自己的邻居路由器处）收集信息。收集完信息之后，每台路由器会在不依赖其他路由器的情况下计算到达各个网络的路由，由于每台路由器维护的是其对整个网络的印象，因此路由器不太会传播邻居路由器提供的错误信息</p>
+<p>链路状态路由协议是收集整个网络的各种信息，所以，这些信息就构成了路由器的一个拓扑数据库。通过对这个数据库使用DijkstraSPF树，这样就能找到通往目的地的最佳路径。</p>
+<p>问题2：</p>
+<p>首先，路由器将自己视为整个网络的根，同时把与自己直连的邻居节点添加到这个树状拓扑中，其他非直连的节点则会被添加到一个候选列表中。</p>
+<p>接下来，算法会将每个候选列表中的节点与树状拓扑中的节点进行比较，如果有哪个候选节点与树状拓扑中当前任何一个邻居节点之间的开销值最小，那么算法会将这个节点作为该节点的邻居节点添加到树状拓扑中，同时将其从候选节点列表中删除。</p>
+<p>这个算法会不断重复，直至候选列表中的所有节点都被添加到了树状拓扑中为止。</p>
+<h3 id="网络工程基础"><a href="#网络工程基础" class="headerlink" title="网络工程基础"></a>网络工程基础</h3><h4 id="网络工程的含义："><a href="#网络工程的含义：" class="headerlink" title="网络工程的含义："></a>网络工程的含义：</h4><p>采用信息系统工程方法，在完善的组织机构的领导下，根据用户的需求，按照计算机网络系统的标准，详细规划设计方案，建成一个满足用户需求的计算机网络系统</p>
+<p>甲方：招标</p>
+<p>乙方：投标</p>
+<p>监理方：提供帮助</p>
+<h4 id="网络规划与设计："><a href="#网络规划与设计：" class="headerlink" title="网络规划与设计："></a>网络规划与设计：</h4><ul>
+<li>需求分析</li>
+<li>总体设计</li>
+<li>详细设计</li>
+<li>施工及验收</li>
+<li>服务及培训</li>
+</ul>
+<h4 id="招标："><a href="#招标：" class="headerlink" title="招标："></a>招标：</h4><ul>
+<li>公开招标</li>
+<li>邀请招标</li>
+<li>竞争性谈判</li>
+<li>唯一来源采购</li>
+<li>询价</li>
+</ul>
+<p>s</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E5%A4%8D%E4%B9%A0%E8%B5%84%E6%96%99/">复习资料</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%BD%91%E7%BB%9C%E5%B7%A5%E7%A8%8B/">网络工程</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E5%A4%8D%E4%B9%A0/">复习</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%B7%AF%E7%94%B1%E4%B8%8E%E4%BA%A4%E6%8D%A2/">路由与交换</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
+              
+              
+                <div class="post-prevnext">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/06/22/%E6%B5%8B%E8%AF%95/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">测试</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/06/21/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E5%8D%9A%E5%AE%A2/">
+                        <span class="hidden-mobile">我的第一篇博客</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="valine"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#valine', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', function() {
+        var options = Object.assign(
+          {"appId":"kvHOLQmO3I3CiOjjkjgNpMDC-gzGzoHsz","appKey":"1aUPkzRh9W3bH3o589a5UEJn","placeholder":"吐槽一下呗","path":"window.location.pathname","avatar":"retro","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-CN","highlight":false,"recordIP":false,"serverURLs":"https://kvholqmo.lc-cn-n1-shared.com","emojiCDN":null,"emojiMaps":null,"enableQQ":false,"requiredFields":[]},
+          {
+            el: "#valine",
+            path: window.location.pathname
+          }
+        )
+        new Valine(options);
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+  
+
+  
+</footer>
+
+
+  <!-- SCRIPTS -->
+  
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.3/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.1/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js" ></script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+</body>
+</html>
