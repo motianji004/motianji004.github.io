@@ -150,7 +150,19 @@
             <span class="h2" id="subtitle" title="欢迎来到我的博客">
               
             </span>
+<span class="h2" id="subtitle">
+    
+</span>
 
+
+<br>
+<span class="h2" id="hitokoto">
+    
+</span>
+
+
+
+</div>
             
           </div>
 
@@ -478,15 +490,31 @@ Quick
 
   <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12/lib/typed.min.js" ></script>
   <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var title = document.getElementById('subtitle').title;
-      
-      typing(title)
-      
-    })(window, document);
+    function typing(id, title){
+        var typed = new Typed('#' + id, {
+            strings: [
+              '  ',
+              title + "&nbsp;",
+            ],
+            cursorChar: "_",
+            typeSpeed: 70,
+            loop: false,
+        });
+        typed.stop();
+        $(document).ready(function () {
+            $(".typed-cursor").addClass("h2");
+            typed.start();
+        });
+    }
+    
+        fetch('https://v1.hitokoto.cn')
+        .then(response => response.json())
+        .then(data => {
+           typing("hitokoto", data.hitokoto)
+        })
+        .catch(console.error)
+    
   </script>
-
 
 
 
